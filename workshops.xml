@@ -1,0 +1,9 @@
+<Workshops>
+    <Workshop id="1" name="Вебінари SoftServe" faculty="Факультет комп'ютерних наук" department="Кафедра ТТП" leader="Кириленко Роман" course="2">
+        <Session day="Середа" time="16:00"/>
+    </Workshop>
+    <Workshop id="2" name="Наукові семінари з фізики" faculty="Факультет фізики" department="Кафедра теоретичної фізики" leader="Петренко Сергій" course="2">
+        <Session day="Четвер" time="16:00"/>
+    </Workshop>
+</Workshops>
+
