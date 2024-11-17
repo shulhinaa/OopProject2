@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:lab2.ViewModels"
+             x:Class="lab2.MainPage"
+             Title="XML Search">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+
+        
+        <HorizontalStackLayout Spacing="10">
+            <Button Text="Browse XML" Command="{Binding SelectFileCommand}" BackgroundColor="Purple" TextColor="White" />
+            <Label Text="{Binding FileLoadStatus}" TextColor="Green" VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        
+        <Grid ColumnDefinitions="1*, 2*, 50, 1*, 2*" RowDefinitions="Auto, Auto, Auto">
+            
+            <Label Text="Workshop Name:" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" />
+            <Entry Text="{Binding WorkshopName}" Placeholder="Enter Workshop Name" Grid.Row="0" Grid.Column="1" />
+
+            <Label Text="Faculty:" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
+            <Entry Text="{Binding Faculty}" Placeholder="Enter Faculty" Grid.Row="1" Grid.Column="1" />
+
+            <Label Text="Department:" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" />
+            <Entry Text="{Binding Department}" Placeholder="Enter Department" Grid.Row="2" Grid.Column="1" />
+
+            
+            <BoxView Color="Gray" WidthRequest="2" HorizontalOptions="Center" Grid.RowSpan="3" Grid.Column="2" />
+
+            
+            <Label Text="Leader:" VerticalOptions="Center" Grid.Row="0" Grid.Column="3" />
+            <Entry Text="{Binding Leader}" Placeholder="Enter Leader" Grid.Row="0" Grid.Column="4" />
+
+            <Label Text="Course:" VerticalOptions="Center" Grid.Row="1" Grid.Column="3" />
+            <Entry Text="{Binding Course}" Placeholder="Enter Course" Grid.Row="1" Grid.Column="4" />
+
+            <Label Text="Day:" VerticalOptions="Center" Grid.Row="2" Grid.Column="3" />
+            <Entry Text="{Binding Day}" Placeholder="Enter Day" Grid.Row="2" Grid.Column="4" />
+        </Grid>
+
+        
+        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+            <Label Text="Choose Strategy:" FontSize="18" FontAttributes="Bold" />
+            <RadioButton Content="SAX" GroupName="Strategy" IsChecked="{Binding IsSAX}" />
+            <RadioButton Content="DOM" GroupName="Strategy" IsChecked="{Binding IsDOM}" />
+            <RadioButton Content="LINQ" GroupName="Strategy" IsChecked="{Binding IsLINQ}" />
+        </HorizontalStackLayout>
+
+        
+        <HorizontalStackLayout Spacing="10" VerticalOptions="EndAndExpand">
+            <Button Text="Search" Command="{Binding SearchCommand}" BackgroundColor="Purple" TextColor="White" />
+            <Button Text="Transform to HTML" Command="{Binding TransformToHtmlCommand}" BackgroundColor="Purple" TextColor="White" />
+            <Button Text="Clear" Command="{Binding ClearCommand}" BackgroundColor="Purple" TextColor="White" />
+            <Button Text="Exit" Command="{Binding ExitCommand}" BackgroundColor="Purple" TextColor="White" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
+
+

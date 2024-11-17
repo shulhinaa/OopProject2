@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:lab2.ViewModels"
+             x:Class="lab2.ResultsPage"
+             Title="Search Results">
+    
+    <VerticalStackLayout Padding="10" Spacing="10">
+       
+        <Label Text="Search Results" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" 
+               TextColor="#800080" />
+
+        
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <CollectionView ItemsSource="{Binding Rows}">
+                    <CollectionView.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label Grid.Column="0" Text="{Binding Columns[0]}" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                            <Label Grid.Column="1" Text="{Binding Columns[1]}" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                            <Label Grid.Column="2" Text="{Binding Columns[2]}" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                            <Label Grid.Column="3" Text="{Binding Columns[3]}" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                            <Label Grid.Column="4" Text="{Binding Columns[4]}" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                            <Label Grid.Column="5" Text="{Binding Columns[5]}" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                            <Label Grid.Column="6" Text="{Binding Columns[6]}" FontAttributes="Bold" BackgroundColor="#800080" TextColor="White" Padding="10" />
+                        </Grid>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding [Назва]}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite"/>
+                                <Label Grid.Column="1" Text="{Binding [Факультет]}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="2" Text="{Binding [Кафедра]}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="3" Text="{Binding [Керівник]}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="4" Text="{Binding [Курс]}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="5" Text="{Binding [День]}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                                <Label Grid.Column="6" Text="{Binding [Час]}" Padding="10" TextColor="#4b0082" BackgroundColor="FloralWhite" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+
+        <Button Text="Back" Command="{Binding BackCommand}" BackgroundColor="#800080" TextColor="White" HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
+
+
+
+
